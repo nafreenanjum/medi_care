@@ -1689,6 +1689,7 @@ const DoctorDashboard = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
+    console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
     const fetchAppointments = async () => {
       setLoading(true);
       try {
