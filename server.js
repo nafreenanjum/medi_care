@@ -22,7 +22,12 @@ const app = express();
 connectDB();
 
 // Middleware setup
-app.use(cors());
+app.use(cors({
+  origin: ['https://medi-care-5r54.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(morgan('dev'));
 
